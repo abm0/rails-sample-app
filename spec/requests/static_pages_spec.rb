@@ -1,33 +1,35 @@
 require 'spec_helper'
 
 describe "Static pages" do
-  describe "Home page" do
 
-    it "Should have the title 'Rails Tutorial Sample App | Home'" do
-      visit '/static_pages/home'
-      expect(page).to have_title('Rails Tutorial Sample App | Home')
-    end
+  subject { page }
+
+  describe "Home page" do
+    before { visit root_path }
+
+    it { should have_content('Sample App') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Home') }
   end
 
   describe "Help page" do
+    before { visit help_path }
 
-    it "Should have the title 'Rails Tutorial Sample App | Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_title('Rails Tutorial Sample App | Help')
-    end
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
 
-  describe "About" do
-  	it "Should have title 'Rails Tutorial Sample App | About us'" do
-  	  visit "/static_pages/about"
-  	  expect(page).to have_title('Rails Tutorial Sample App | About Us')
-  	end
+  describe "About page" do
+    before { visit about_path }
+
+    it { should have_content('About') }
+    it { should have_title(full_title('About Us')) }
   end
 
-  describe "Contacts" do
-    it "Should have title 'Rails Tutorial Sample App | Contacts'" do
-      visit "/static_pages/contacts"
-      expect(page).to have_title('Rails Tutorial Sample App | Contacts')
-     end
+  describe "Contact page" do
+    before { visit contacts_path }
+
+    it { should have_content('Contacts') }
+    it { should have_title(full_title('Contacts')) }
   end
 end
