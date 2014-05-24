@@ -1,0 +1,10 @@
+<% provide_title(:title, @author.name) %>
+<h1><%= @author.name %></h1>
+
+<section class="books-list">
+  <ul>
+    <% @author.books.map do |book| %>
+      <li><%= book.name %></li>
+    <% end %>
+  </ul>
+</section>

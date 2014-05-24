@@ -1,0 +1,14 @@
+<li>
+  <%= link_to author.name, author %>
+  <ul class="custom-sub-list">
+    <% author.books.map do |book| %>
+      <li>
+        <%= book.name %>
+      </li>
+    <% end %>
+  </ul>
+  <% if current_user.admin? %>
+    | <%= link_to "delete", author, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>

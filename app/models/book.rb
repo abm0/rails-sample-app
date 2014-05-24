@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
-  has_many :authors
-  validates :name, presence: true
+  has_many :relationships
+  has_many :authors, through: :relationships
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
 end

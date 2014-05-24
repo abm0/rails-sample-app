@@ -14,5 +14,15 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+
+    50.times do |n|
+      name = "Book-#{n+1}"
+      Book.create!(name: name)
+    end
+
+    50.times do |n|
+      name = "Author-#{n+1}"
+      Author.create!(name: name)
+    end
   end
 end

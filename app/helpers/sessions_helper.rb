@@ -26,6 +26,13 @@ module SessionsHelper
     @current_user ||= User.find_by(remember_token: remember_token)
   end
 
+  def filter_non_signed
+    if !signed_in?
+      flash[:error] = "You should sign in first."
+      redirect_to signin_path
+    end
+  end    
+
   def current_user?(user)
     user == current_user
   end

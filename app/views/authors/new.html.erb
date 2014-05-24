@@ -1,0 +1,15 @@
+<% provide(:title, 'Create new author') %>
+<h1>Create new author</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@author) do |f| %>
+      <%= render 'shared/error_messages', object: @author %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.submit "Create author", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

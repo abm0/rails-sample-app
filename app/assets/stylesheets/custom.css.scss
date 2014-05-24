@@ -189,3 +189,42 @@ input {
     }
   }
 }
+
+/* Books & authors */
+
+#search-form {
+  input {
+    vertical-align: top;
+  }
+
+  input[type="text"] {
+    width: 30%;
+  }
+}
+
+.custom-list {
+  margin-top: 15px;
+
+  li {
+    border-top: 1px solid $grayLighter;;
+    list-style: none;
+    margin-bottom: 10px;
+    padding-top: 10px;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .custom-sub-list {
+    margin-left: 0;
+    color: #aaa;
+    font-size: 0.9em;
+
+    li {
+      display: inline-block;
+      border: none;
+      margin-right: 10px;
+    }
+  }
+}
